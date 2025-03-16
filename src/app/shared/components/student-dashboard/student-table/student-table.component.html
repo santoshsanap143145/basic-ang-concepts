@@ -1,0 +1,32 @@
+<table class="table table-bordered" *ngIf="stdInfo.length > 0; else noStd">
+  <thead>
+    <tr>
+      <th>Sr No</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Contact</th>
+      <th>Edit</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let std of stdInfo; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ std.fname }}</td>
+      <td>{{ std.lname }}</td>
+      <td>{{ std.email }}</td>
+      <td>{{ std.contact }}</td>
+      <td>
+        <button class="btn btn-sm btn-primary">Edit</button>
+      </td>
+      <td>
+        <button class="btn btn-sm btn-danger">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noStd>
+  <p class="alert alert-info">There is no Student is added yet !!</p>
+</ng-template>

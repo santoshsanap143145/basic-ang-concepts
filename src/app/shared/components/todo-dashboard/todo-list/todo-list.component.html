@@ -1,0 +1,17 @@
+<ul class="list-group" *ngIf="mySkills.length > 0; else noskills">
+  <li
+    class="list-group-item"
+    *ngFor="let skill of mySkills; let i = index"
+    [ngClass]="{
+      'list-group-item-primary': i % 2 === 0,
+      'list-group-item-warning': i % 2 !== 0
+    }"
+  >
+    {{ skill }}
+  </li>
+</ul>
+<ng-template #noskills>
+    <p class="alert alert-primary">
+        No skills added yet !
+    </p>
+</ng-template>
