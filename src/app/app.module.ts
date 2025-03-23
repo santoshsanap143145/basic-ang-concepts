@@ -8,6 +8,8 @@ import { TodoFormComponent } from './shared/components/todo-dashboard/todo-form/
 import { TodoListComponent } from './shared/components/todo-dashboard/todo-list/todo-list.component';
 import { StudentFormComponent } from './shared/components/student-dashboard/student-form/student-form.component';
 import { StudentTableComponent } from './shared/components/student-dashboard/student-table/student-table.component';
+import { DialogModalComponent } from './shared/components/dialog-modal/dialog-modal.component';
+import { CardComponent } from './shared/components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { StudentTableComponent } from './shared/components/student-dashboard/stu
     TodoFormComponent,
     TodoListComponent,
     StudentFormComponent,
-    StudentTableComponent
+    StudentTableComponent,
+    DialogModalComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule

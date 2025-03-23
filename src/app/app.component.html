@@ -1,5 +1,164 @@
 
-<h1 class="bg-primary p-2 m-0"></h1>
+<app-dialog-modal (emitshowFlag)="hideModal($event)" [showModal]="show">
+  <h3 heading>Do you really want to Delete?</h3>
+  <p body><em>You won't be able to revert this Action !!</em></p>
+  <div class="d-flex justify-content-between" func>
+    <button class="btn btn-sm btn-primary">
+      Yes
+    </button>
+    <button class="btn btn-sm btn-danger" (click)="hideModal(false)">
+      Cancel
+    </button>
+  </div>
+</app-dialog-modal>
+<h1 class="p-2 bg-warning m-0"></h1>
+<h3 class="alert alert-info p-2 text-center"># ng-cotent task - Delete Dialog Box</h3>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h4>
+            Lorem ipsum dolor sit amet.
+          </h4>
+        </div>
+        <div class="card-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, neque rerum quae labore provident ipsum, voluptatem consequuntur earum nesciunt non temporibus error nam, et numquam blanditiis. Mollitia quasi molestias distinctio!
+          </p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <button class="btn btn-sm btn-primary">Edit</button>
+          <button class="btn btn-sm btn-danger" (click)="removeOnclick()">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ------------------------------------------------------------------------------------------------- -->
+
+
+<h1 class="p-2 bg-warning m-0"></h1>
+<h3 class="alert alert-info p-2 text-center"># ng-cotent task - Mobile Card</h3>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-6 mb-5" *ngFor="let prod of mobileArr">
+      <app-card>
+        <h3 class="d-flex justify-content-between" heading>
+          {{prod.name}}
+          <small class="p-1 text-white" [ngClass]="{
+            'bg-success' : prod.rating >= 4,
+            'bg-warning' : prod.rating < 4 && prod.rating >= 3,
+            'bg-danger' : prod.rating < 3
+          }">{{prod.rating}}</small>
+        </h3>
+        <div body class="info d-flex justify-content-between">
+          <img [src]="prod.image" *ngIf="prod.image;else noImg" style="width: 50%; height: 300px; object-fit: cover;" alt="Mobile Image" title="Mobile Image" >
+          <ng-template #noImg>
+            <p class="bg-secondary d-flex justify-content-center align-items-center"style="width: 50%; height: 300px; object-fit: cover;">
+              <strong>No Image Available</strong>
+            </p>
+          </ng-template>
+          <ul class="list-group" style="width: 50%;">
+            <li *ngFor="let spec of prod.specifications" class="list-group-item border border-0">{{spec}}</li>
+          </ul>
+        </div>
+        <h4 class="text-danger" func>${{prod.price}} <del class="text-muted">${{prod.price * 1.5}}</del></h4>
+      </app-card>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ------------------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------------------- -->
+
+<h1 class="p-2 bg-warning m-0"></h1>
+<h3 class="alert alert-info p-2 text-center"># ng-cotent task - post Card</h3>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-4 mb-5" *ngFor="let post of postArr">
+      <app-card>
+        <h3 heading>
+          {{post.title}}
+        </h3>
+        <p body>
+          {{post.body}}
+        </p>
+        <div func class="func d-flex justify-content-between">
+          <button class="btn btn-sm btn-primary">Edit</button>
+          <button class="btn btn-sm btn-danger">remove</button>
+        </div>
+      </app-card>
+    </div>
+  </div>
+</div>
+
+
+<!-- ------------------------------------------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1 class="bg-primary p-2 m-0"></h1>
 <h1 class="bg-warning text-white p-2 text-center">Todo Skills with I/P and O/P decoraotors</h1>
 <div class="container mt-5 mb-5">
     
@@ -21,4 +180,4 @@
         <app-student-dashboard></app-student-dashboard>
     </div>
   </div>
-</div>
+</div> -->

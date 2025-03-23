@@ -1,0 +1,15 @@
+<div class="modalBackdrop" (click)="closeModal(false)" *ngIf="showModal">
+    <div class="card postCard" (click)="$event.stopPropagation()">
+        <div class="card-header">
+          <ng-content select="[heading]"></ng-content>
+        </div>
+        <div class="card-body">
+          <ng-content select="[body]"></ng-content>
+        </div>
+        <div class="card-footer">
+          <ng-content select="[func]"></ng-content>
+        </div>
+      </div>
+
+</div>
+
