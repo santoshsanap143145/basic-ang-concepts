@@ -10,6 +10,10 @@ import { StudentFormComponent } from './shared/components/student-dashboard/stud
 import { StudentTableComponent } from './shared/components/student-dashboard/student-table/student-table.component';
 import { DialogModalComponent } from './shared/components/dialog-modal/dialog-modal.component';
 import { CardComponent } from './shared/components/card/card.component';
+import { FormsModule } from '@angular/forms';
+import { SummaryPipe } from './shared/pipes/summary.pipe';
+import { summaryWordsPipe } from './shared/pipes/summaryWord.pipe';
+import { PlayerFilterPipe } from './shared/pipes/playerFilter.pipe';
 
 @NgModule({
   declarations: [
@@ -21,10 +25,14 @@ import { CardComponent } from './shared/components/card/card.component';
     StudentFormComponent,
     StudentTableComponent,
     DialogModalComponent,
-    CardComponent
+    CardComponent,
+    SummaryPipe,
+    summaryWordsPipe,
+    PlayerFilterPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

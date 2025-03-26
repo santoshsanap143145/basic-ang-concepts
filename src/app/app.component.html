@@ -1,5 +1,226 @@
 
-<app-dialog-modal (emitshowFlag)="hideModal($event)" [showModal]="show">
+
+
+<h2 class="bg-warning m-0 p-1"></h2>
+<h2 class="bg-primary text-white text-center p-2">Angular Pipe task - summary- characters</h2>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12">
+      <p class="alert-info p-1">{{para | summary}}</p>
+      <p class="alert-info p-1">{{para | summary : 200}}</p>
+    </div>
+  </div>
+</div>
+
+
+<h2 class="bg-warning m-0 p-1"></h2>
+<h2 class="bg-primary text-white text-center p-2">Angular Pipe task - summary-words</h2>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12">
+      <p class="alert-info p-1">{{para | summaryWords}}</p>
+      <p class="alert-info p-1">{{para | summaryWords : 50}}</p>
+    </div>
+  </div>
+</div>
+
+
+
+<h2 class="bg-warning m-0 p-1"></h2>
+<h2 class="bg-primary text-white text-center p-2">Angular Pipe task - filter Players Info by specific condition</h2>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="form-group">
+        <input [(ngModel)]="searchVal" type="text" placeholder="Search..." class="form-control">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <select [(ngModel)]="selectedField" class="form-control">
+          <option value="name"> By Player's names</option>
+          <option value="team">By teams Names</option>
+          <option value="odiRuns">By ODI Runs</option>
+          <option value="testRuns">By Test RUns</option>
+          <option value="debutYear">By year of Debut</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>Sr No</td>
+            <td>Full Name</td>
+            <td>Team</td>
+            <td>ODI Runs</td>
+            <td>Test Runs</td>
+            <td>Year of Debut</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of playersArr | playerFilter: searchVal : selectedField; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{player.name}}</td>
+            <td>{{player.team}}</td>
+            <td>{{player.odiRuns}}</td>
+            <td>{{player.testRuns}}</td>
+            <td>{{player.debutYear}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <app-dialog-modal (emitshowFlag)="hideModal($event)" [showModal]="show">
   <h3 heading>Do you really want to Delete?</h3>
   <p body><em>You won't be able to revert this Action !!</em></p>
   <div class="d-flex justify-content-between" func>
@@ -37,9 +258,9 @@
   </div>
 </div>
 
-<!-- ------------------------------------------------------------------------------------------------- -->
+------------------------------------------------------------------------------------------------- -->
 
-
+<!-- 
 <h1 class="p-2 bg-warning m-0"></h1>
 <h3 class="alert alert-info p-2 text-center"># ng-cotent task - Mobile Card</h3>
 
@@ -70,14 +291,14 @@
       </app-card>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
 <!-- ------------------------------------------------------------------------------------------------- -->
 <!-- ------------------------------------------------------------------------------------------------- -->
 
-<h1 class="p-2 bg-warning m-0"></h1>
+<!-- <h1 class="p-2 bg-warning m-0"></h1>
 <h3 class="alert alert-info p-2 text-center"># ng-cotent task - post Card</h3>
 
 <div class="container my-5">
@@ -98,9 +319,9 @@
     </div>
   </div>
 </div>
+ -->
 
 
-<!-- ------------------------------------------------------------------------------------------------- -->
 
 
 
